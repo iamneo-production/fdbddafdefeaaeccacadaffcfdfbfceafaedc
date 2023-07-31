@@ -32,7 +32,7 @@ public class TaskController {
 
     //Get Task by ID
     @GetMapping("/getTask")
-    public Task getTaskByHolderName(@RequestParam String taskId) {
+    public Task getTaskByHolderName(@RequestParam("id") String taskId) {
         Optional<Task> taskOptional = taskRepository.findById(taskId);
         return taskOptional.get();
     }
@@ -46,7 +46,7 @@ public class TaskController {
 
     //Change task status
     @PutMapping("/changeStatus")
-    public ResponseEntity<Task> changeStatus(@RequestParam String taskId) {
+    public ResponseEntity<Task> changeStatus(@RequestParam("id") String taskId) {
         Task updateTask = taskRepository.findById(taskId).orElseThrow(
             ()-> new ResourceNotFoundException("Task not exist with id: "));
         
@@ -59,7 +59,7 @@ public class TaskController {
 
     //Delete a task
     @DeleteMapping("/deleteTask")
-    public String deleteTask(@RequestParam String taskId) {
+    public String deleteTask(@RequestParam("id") String taskId) {
         Task deleteTask = taskRepository.findById(taskId).orElseThrow(
             ()-> new ResourceNotFoundException("Task not exist with id: "));
         
