@@ -39,9 +39,9 @@ public class TaskController {
 
     //Save a Task
     @PostMapping("/saveTask")
-    public @ResponseBody String saveTask(@RequestBody Task task) {
-        taskRepository.save(task);
-        return "New task saved";
+    public ResponseEntity<Task> saveTask(@RequestBody Task task) {
+        Task body = taskRepository.save(task);
+        return ResponseEntity.ok(body);
     }
 
     //Change task status
