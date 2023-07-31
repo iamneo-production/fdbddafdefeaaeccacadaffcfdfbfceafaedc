@@ -1,4 +1,4 @@
-package com.examly.springapp.dao;
+package com.examly.springapp.Controller;
 
 import java.util.List;
 import java.util.Optional;
@@ -14,9 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.examly.springapp.exception.ResourceNotFoundException;
-import com.examly.springapp.model.Task;
-import com.examly.springapp.service.TaskRepository;
+import com.examly.springapp.Exception.ResourceNotFoundException;
+import com.examly.springapp.Model.Task;
+import com.examly.springapp.Repository.TaskRepository;
 
 @RestController
 public class TaskController {

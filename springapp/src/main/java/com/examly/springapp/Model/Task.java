@@ -10,7 +10,7 @@ public class Task {
     private String taskHolderName;
     private String taskDate;
     private String taskName;
-    private string taskStatus;
+    private String taskStatus;
 
     //setters
     public void setTaskId(String taskId){
