@@ -16,13 +16,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.examly.springapp.Exception.ResourceNotFoundException;
 import com.examly.springapp.Model.Task;
-import com.examly.springapp.Repository.TaskRepository;
+import com.examly.springapp.Repository.TaskRepo;
 
 @RestController
 public class TaskController {
 
     @Autowired
-    private TaskRepository taskRepository;
+    private TaskRepo taskRepository;
 
     //Get All Tasks
     @GetMapping("/alltasks")
